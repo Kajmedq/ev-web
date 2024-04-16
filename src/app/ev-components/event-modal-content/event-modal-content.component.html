@@ -1,0 +1,44 @@
+<!-- The contents of an event-details modal -->
+<div class="modal-header">
+
+    <!-- Modal header -->
+    <h4 class="modal-title">
+        {{event.title}}
+        <!-- If the event has a host, print it on a new line -->
+        <span *ngIf="event.host"><br><small>v. {{event.host}}</small></span>
+    </h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+
+<!-- Modal body -->
+<div class="modal-body">
+    <ev-katex></ev-katex>
+    <div class="d-flex mb-3">
+        <!-- Event date, time, and location -->
+        <ul class="event-details">
+            <li style="float: left;"><i-bs name="calendar3"></i-bs> {{event.date | date:'dd. MMMM yyyy'}}</li>
+            <li style="float: left;"><i-bs name="clock"></i-bs> {{event.date | date:'HH:mm'}}</li>
+            <li style="float: left;"><i-bs name="geo-alt"></i-bs> {{event.location}}</li>
+        </ul>
+    </div>
+
+    <!-- Event description and abstract -->
+    <!-- Only showed if the event has a description and/or an abstract -->
+    <!-- Splits the string by '\n' and wraps each substring in a paragraph -->
+    <div *ngIf="event.description">
+        <p *ngFor="let paragraph of event.description.split('\n')">{{paragraph}}</p>
+    </div>
+    <div *ngIf="event.abstract">
+        <h6>Abstract</h6>
+        <p *ngFor="let paragraph of event.abstract.split('\n')">{{paragraph}}</p>
+    </div>
+</div>
+
+<!-- Modal footer -->
+<div class="modal-footer">
+    <!-- If the event has an FB-link, create a button for it -->
+    <a *ngIf="event.link" type="button" class="btn btn-outline-dark text-center" href="{{event.link}}" target="_blank">
+        <i-bs name="facebook" class=""></i-bs> Begivenhed
+    </a>
+    <button type="button" ngbAutofocus class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Luk</button>
+</div>

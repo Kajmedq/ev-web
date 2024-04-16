@@ -1,0 +1,29 @@
+.event-carousel-card {
+	padding: 1.5rem;
+	//margin: 0 !important;
+
+	z-index: 2;
+}
+
+.event-carousel-card ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.event-carousel-card ul li {
+	padding-top: 0.2em;
+	padding-right: 1em;
+	float: left;
+}
+
+.event-carousel-card-left {
+	height: 21rem;
+	border-top-right-radius: 1em;
+	border-bottom-right-radius: 1em;
+}
+
+.event-carousel-card-bottom {
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+}

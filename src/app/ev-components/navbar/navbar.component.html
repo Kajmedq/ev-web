@@ -1,0 +1,50 @@
+<!-- Main navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-primary bg-gradient shadow-sm fixed-top">
+    <div class="container col col-lg-8">
+
+        <!-- Navbar logo -->
+        <a class="navbar-brand" routerLink="">
+            <img src="../../../assets/logos/logo4.svg"
+                 style="height: 2em;"
+                 alt="Eulers Venner">
+        </a>
+
+        <!-- Navbar toggle button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarContents"
+        aria-controls="navbarContents" aria-expanded="false" aria-label="Toggle navigation"
+        (click)="isCollapsed = !isCollapsed">
+            <i-bs name="list"></i-bs>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbarContents" [ngbCollapse]="isCollapsed">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="">Forside</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/lectures">Foredrag</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/about">Om foreningen</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/contact">Kontakt</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/statutes">Vedtægter</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{path_facebook}}" target="_blank">
+                        <i-bs name="facebook"></i-bs>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

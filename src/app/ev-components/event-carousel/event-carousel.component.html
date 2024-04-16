@@ -1,0 +1,35 @@
+<!-- Contents of the event-carousel. -->
+<div *ngIf="nextEvent"
+	 (click)="openModal(nextEvent)"
+	 class="container event-carousel shadow-sm">
+
+	<!-- First row. On large screens it contains everything, on small screens it contains half. -->
+    <div class="row g-0">
+
+		<!-- Carousel card for large screens. -->
+        <div class="d-none d-md-block col-md-4 position-absolute z-2">
+            <ev-event-carousel-card
+				[event]="nextEvent"
+				[cardPosition]="EventCarouselCardPosition.Left"></ev-event-carousel-card>
+        </div>
+
+		<!-- Carousel image for large screens. -->
+        <div class="d-none d-md-block col-md-9 offset-md-3 z-1 position-relative">
+			<div class="event-carousel-image event-carousel-image-large"></div>
+        </div>
+
+		<!-- Carousel image for small screens. -->
+		<div class="d-block d-md-none col-12 z-1 position-relative">
+			<div class="event-carousel-image event-carousel-image-small"></div>
+		</div>
+    </div>
+
+	<!-- Second row. Only contains carousel card for small screens. -->
+	<div class="row g-0">
+		<div class="d-md-none d-block col-md-12 z-2" style="margin-top: -2rem">
+			<ev-event-carousel-card
+				[event]="nextEvent"
+				[cardPosition]="EventCarouselCardPosition.Bottom"></ev-event-carousel-card>
+		</div>
+	</div>
+</div>

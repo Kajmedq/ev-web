@@ -1,0 +1,43 @@
+<div class="container col col-lg-8">
+	<div class="mb-5">
+		<ev-event-carousel></ev-event-carousel>
+	</div>
+
+	<div class="mb-5">
+		<h3>Kommende arrangementer</h3>
+		<ev-eventlist [pageSize]="3" [eventTypeFilter]="eventTypeFilter" [eventTimeFilter]="eventComing"></ev-eventlist>
+	</div>
+
+	<div class="mb-5">
+		<h3>Seneste arrangementer</h3>
+		<ev-eventlist [pageSize]="3" [eventTypeFilter]="eventTypeFilter" [eventTimeFilter]="eventPrevious"></ev-eventlist>
+	</div>
+</div>
+
+<div class="bg-primary-subtle shadow-inset">
+	<div class="container col col-lg-8 pt-5 pb-5">
+		<div class="row g-4">
+			<div class="col-12 col-lg-6">
+				<div class="d-flex flex-column bg-body rounded p-4 shadow-sm h-100">
+					<h4>Hvem er vi?</h4>
+					<p>
+						Eulers Venner er en studenterforening af matematikstuderende på Institut for Matematik, Aarhus Universitet.
+					</p>
+					<p>
+						Vi holder diverse gratis arrangementer i løbet af hvert semester. Disse inkluderer spændende foredrag
+						med diverse forelæsere 2-4 gange hvert semester. Til foredragene er der gratis kaffe, te og kage.
+					</p>
+					<a class="mt-auto" routerLink="/about" >Læs mere</a>
+				</div>
+			</div>
+			<div class="col-12 col-lg-6">
+				<div class="d-flex flex-column bg-body rounded p-4 shadow-sm h-100">
+					<h4>Følg med</h4>
+					<p>Vil du følge med i hvilke arrangementer vi holder? Så kan du følge vores Facebook-side: Så du kan se vores arrangementer, så snart de offentliggøres.</p>
+					<a class="mt-auto" href="{{path_facebook}}" target="_blank">Se vores Facebook-side</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,27 @@
+<!-- General list group containing ev-events  -->
+<div class="list-group">
+    <button *ngFor="let event of events | slice:0:pageSize"
+            class="list-group-item list-group-item-action d-flex align-items-center p-3"
+            type="button"
+            (click)="openModal(event)">
+
+        <!-- Event title -->
+        <!-- and host of on a small screen -->
+        <div class="col-9 col-sm-6">
+            {{event.title}}
+            <span *ngIf="event.host" class="d-sm-none d-block"> v. {{event.host}}</span>
+        </div>
+
+        <!-- Event host -->
+        <!-- Invisible if on small screen -->
+        <div class="col-3 d-none d-sm-block">
+            <span *ngIf="event.host">v. {{event.host}}</span>
+        </div>
+
+        <!-- Event date -->
+        <div class="col-3 text-end">
+            {{event.date | date:'shortDate'}}
+        </div>
+
+    </button>
+</div>

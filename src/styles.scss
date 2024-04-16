@@ -1,0 +1,57 @@
+// Main style scss.
+
+// Coloring
+// Import Bootstrap after definition of custom colors.
+$primary: #fed140;
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+.primary-subtle-text {
+	color: #333025;
+}
+
+// Fonts
+@import url("https://use.typekit.net/pfa1hif.css");
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+section h1,
+section h2,
+section h3,
+section h4 {
+	font-family: "droid-serif", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+html {
+	background-color: $light-bg-subtle;
+}
+
+body {
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 1.5;
+
+	background-color: $light-bg-subtle;
+}
+
+// Make links dark
+section a {
+    @extend #{'.link-offset-2', '.link-underline-opacity-75', '.link-underline-opacity-100-hover', '.link-underline-primary'};
+    color: $dark;
+	text-decoration-thickness: 1.5px;
+}
+
+section a:hover {
+	color: $body-emphasis-color;
+}
+
+// Very very spaghetti-codey way of fixing vertical alignment of Bootstrap Icons
+i-bs {
+    //text-align: center;
+    font-size: 90%;
+    display: inline-block;
+    overflow: visible !important;
+    //vertical-align: 0.125em;
+    transform: translateY(-0.125em) !important;
+}

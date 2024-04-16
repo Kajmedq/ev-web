@@ -1,0 +1,30 @@
+.event-carousel {
+    //background-image: url("../../assets/event_image.jpg");
+    //background-size: cover;
+    //background-position: 40cm 0cm;
+    //height: 21rem;
+    padding: 0;
+    overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+
+.event-carousel-image {
+	background-image: url("../../../assets/event_image.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: 0.4s ease-out;
+}
+
+.event-carousel:hover .event-carousel-image {
+	transform: scale(1.05); // Make sure this works across browsers
+	transition: 0.4s ease-out;
+}
+
+.event-carousel-image-large {
+	height: 21rem;
+}
+
+.event-carousel-image-small {
+	height: 14rem;
+}

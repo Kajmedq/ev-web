@@ -1,0 +1,20 @@
+<div *ngIf="event"
+	 class="event-carousel-card
+	 		d-flex
+	 		flex-column
+	 		bg-primary-subtle
+	 		bg-gradient
+	 		shadow-sm
+	 		primary-subtle-text"
+	 [ngClass]="cardPosition == EventCarouselCardPosition.Left ? 'event-carousel-card-left' : 'event-carousel-card-bottom'">
+	<p class="text-primary-emphasis">Næste arrangement</p>
+	<h3 class="fw-bold">{{event.title}}</h3>
+	<h6 *ngIf="event.host">v. Jesper Funch Thomsen</h6>
+	<div class="mt-auto">
+		<ul>
+			<li><i-bs name="calendar3"></i-bs> {{event.date | date:'shortDate'}}</li>
+			<li><i-bs name="clock"></i-bs> {{event.date | date:'HH:mm'}}</li>
+			<li><i-bs name="geo-alt"></i-bs> {{event.location}}</li>
+		</ul>
+	</div>
+</div>

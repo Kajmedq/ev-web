@@ -1,0 +1,1 @@
+export const PATH_FACEBOOK_PAGE: string = "https://www.facebook.com/eulersvenner";
